@@ -30,4 +30,4 @@ run:
 	@echo -n "Building docker image with tag $(TAG)"
 	docker build -f Dockerfile --platform linux/x86_64 -t eu.ovh.io/ademe-data/ademe_pipeline:$(TAG) .
 	@echo -n "Running docker image with tag $(TAG)"
-	docker run eu.ovh.io/ademe-data/ademe_pipeline:$(TAG)
+	docker run -v ./output:/ROOT/output eu.ovh.io/ademe-data/ademe_pipeline:$(TAG)
