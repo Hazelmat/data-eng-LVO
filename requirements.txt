@@ -1,0 +1,2 @@
+apache-beam[gcp]==2.51.0
+flytekit==1.9.1

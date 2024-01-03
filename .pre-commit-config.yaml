@@ -1,0 +1,56 @@
+---
+repos:
+- repo: https://github.com/ambv/black
+  rev: 23.7.0
+  hooks:
+  - id: black-jupyter
+    language_version: python3
+    args: [src/pipeline, --line-length=119]
+
+- repo: https://github.com/pycqa/flake8
+  rev: 6.1.0
+  hooks:
+  - id: flake8
+    additional_dependencies:
+    - flake8-absolute-import==1.0.0.1
+    - flake8-bugbear==21.4.3
+
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.4.0
+  hooks:
+  - id: check-merge-conflict
+  - id: check-yaml
+    args:
+    - .pre-commit-config.yaml
+  - id: mixed-line-ending
+
+- repo: https://github.com/jumanjihouse/pre-commit-hook-yamlfmt
+  rev: 0.2.3
+  hooks:
+  - id: yamlfmt
+    args: [--mapping, '2', --sequence, '2', --offset, '0']
+
+
+- repo: https://github.com/pre-commit/mirrors-mypy
+  rev: v1.4.1      # Use the sha / tag you want to point at
+  hooks:
+  - id: mypy
+    args:
+    - --install-types
+    - --non-interactive
+
+- repo: https://github.com/pycqa/isort
+  rev: 5.12.0
+  hooks:
+  - id: isort
+    name: isort (python)
+
+- repo: https://github.com/pre-commit/mirrors-autopep8
+  rev: v2.0.2      # Use the sha / tag you want to point at
+  hooks:
+  - id: autopep8
+
+- repo: https://github.com/kynan/nbstripout
+  rev: 0.6.1
+  hooks:
+  - id: nbstripout
