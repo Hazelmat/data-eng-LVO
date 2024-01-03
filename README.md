@@ -4,9 +4,10 @@
 Le projet utilise le fichier de données suivant, stocké dans `src/resources/POI_sample_addresses_and_locations.csv`
 ### Output 
 
-Fichier CSV de sortie avec la même structure que l'input tout en assurant que les adresses sont 
+Fichier CSV d'output avec la même structure que l'input tout en assurant que les adresses sont 
 valides et suivent le format de la BAN (Base Adresse Nationale), et que les latitudes et 
 longitudes sont correctes.
+le fichier d'output est stocké localement dans `output/`
 ### Structure
 
 ```csv
