@@ -31,7 +31,7 @@ métriques de jobs dans Prometheus ou DataDog.
 
 Enfin, une configuration avec pré-commit est en place pour garantir le style et le formatage du 
 code pour chaque commit.
-Un makefile est dipsonible pour run le workflow en une seule commande `make run
+Un makefile est dipsonible pour run le workflow en une seule commande `make run`
 ## 3. Scaling
 ![img.png](docs/scaling.png)
 Pour le scaling de cette pipeline, plusieurs fondations sont déjà en place. En utilisant Beam et 
