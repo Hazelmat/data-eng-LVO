@@ -64,7 +64,7 @@ Enfin, ce qui suit n'est pas une liste exhaustive pour la mise en production de 
 ## Running the Project
 Configurez un nouvel environnement virtuel avec Python 3.9, puis :
 
-- Run `Make install` pour installer les exigences de développement.
+- Run `Make install` pour installer les requirements.
 - Run `Make run` pour lancer le workflow Flyte exécutant la pipeline BAN normalization.
 - Run `Make test` pour lancer les tests.
 
