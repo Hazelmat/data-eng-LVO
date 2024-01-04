@@ -17,7 +17,7 @@ identifiant_unique,adresse,adresse_complement,code_postal,ville,st_x,st_y
 ## 2. Implementation
 ![img_1.png](docs/actual.png)
 
-Ce projet utilise le SDK Python Apache Beam pour construire un pipeline qui s'exécute sur 
+Ce projet utilise le SDK Python Apache Beam pour construire une pipeline qui s'exécute sur 
 le DirectRunner :
 
 - ban_normalization_job.py
