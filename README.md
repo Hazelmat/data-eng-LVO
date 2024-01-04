@@ -24,10 +24,10 @@ le DirectRunner :
 
 La pipeline Beam utilise les endpoints bulk `search/csv` et `reverse/csv` pour pouvoir scaler et traiter un ensemble d'elements à chaque requete d'API
 
-La pipeline découpe le fichier d'nput en batch de 1000 `batch_size` elements, et pour chaque batch on 
-fait les étapes suivantes :
+La pipeline découpe le fichier d'input en batch de 1000 elements (`batch_size`), et pour chaque 
+batch on fait les étapes suivantes :
 - Dans un premier temps on appelle l'endpoint search/csv de l'API pour normaliser les adresses et corriger les longitudes et latitudes
-- Ensuite pour les elements non trouvés (status `skipped`, `not_ok`), on appelle l'endpoint search/csv pour récupérer l'adresse normalisé depuis un couple lat,lon
+- Ensuite pour les elements non trouvés (status `skipped`, `not_ok`), on appelle l'endpoint reverse/csv pour récupérer l'adresse normalisé depuis un couple lat,lon
 - Formattage d'output 
 - Enfin on s'assure d'avoir le meme nombre d'input et output à la fin, j'ai fait en sorte de faire un job qui essaye de normaliser en mode best effort et garder le reste des élements dans le fichier output ceci peut etre discuter et affiner plus tard si on veut filtrer les élements avec des données incorrectes.
 
