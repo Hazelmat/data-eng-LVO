@@ -21,6 +21,7 @@ def process_search_api_response(element):
         element["adresse"] = element["result_name"]
         element["ville"] = element["result_city"]
         element["code_postal"] = element["result_postcode"]
+        element["adresse_complement"] = element["adresse_complement"]
         element["st_x"] = element["longitude"]
         element["st_y"] = element["latitude"]
     return element, is_non_ok
@@ -104,7 +105,17 @@ def finalize_output(element):
     """
     element, _ = element
     fields = ["identifiant_unique", "adresse", "adresse_complement", "code_postal", "ville", "st_x", "st_y"]
-    formatted_element = [element.get(field, "") for field in fields]
+
+    formatted_element = []
+    for field in fields:
+        if field in ["st_x", "st_y", "code_postal"]:
+            # Do not add quotes
+            formatted_element.append(str(element.get(field, "")))
+        else:
+            # Add quotes for other fields
+            value = str(element.get(field, "")).replace('"', '""')  # Escape existing quotes in the value
+            formatted_element.append(f'"{value}"')
+
     return ",".join(formatted_element)
 
 
