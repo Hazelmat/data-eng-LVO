@@ -23,6 +23,7 @@ le DirectRunner :
 - ban_normalization_job.py
 
 La pipeline Beam utilise les endpoints bulk `search/csv` et `reverse/csv` pour pouvoir scaler et traiter un ensemble d'elements à chaque requete d'API
+
 La pipeline découpe le fichier d'nput en batch de 1000 `batch_size` elements, et pour chaque batch on 
 fait les étapes suivantes :
 - Dans un premier temps on appelle l'endpoint search/csv de l'API pour normaliser les adresses et corriger les longitudes et latitudes
