@@ -71,3 +71,8 @@ Configurez un nouvel environnement virtuel avec Python 3.9, puis :
 - Run `Make run` pour lancer le workflow Flyte exécutant la pipeline BAN normalization.
 - Run `Make test` pour lancer les tests.
 
+### Annexes
+- ban-normalization-job.py : visualisation du graphe de la pipeline avec les differentes étapes
+  ![img.png](docs/pipeline.svg)
+
+
